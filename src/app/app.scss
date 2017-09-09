@@ -32,12 +32,23 @@ a:active {
 //pi: product-item------------------------------------
 //viết tay cho sản phẩm hiển thị trong danh sách
 .pi {
-  &__inner {}
+  &__inner {
+    background-color: #fff;
+    padding: 6px;
+  }
   &__image {}
-  &__info {}
-  &__title {}
+  &__info {
+    text-align: left;
+  }
+  &__title {
+    font-size: 10pt;
+  }
   &__price {
-    del.compare-price {}
+    font-size: 10pt;
+    color: $dg-price-color;
+    del.compare-price {
+      color: $dg-compare-price-color;
+    }
   }
 }
 
@@ -50,7 +61,7 @@ a:active {
 .navbar-button {
   float: right;
   button {
-  	background: none;
+    background: none;
     margin: 0;
     padding: 0 6px;
   }

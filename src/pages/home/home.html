@@ -39,7 +39,7 @@
       </ion-slide>
     </ion-slides>
   </ion-grid>
-  
+
   <!--Hiển thị demo 1 nhóm sản phẩm ngoài trang chủ-->
   <ion-grid name="collection">
     <ion-row name="collection header">
@@ -52,11 +52,11 @@
     </ion-row>
     <ion-row name="collection products">
       <ion-slides slidesPerView="2.5" spaceBetween="10">
-        <ion-slide *ngFor="let i of [1,2,2,3]">
+        <ion-slide *ngFor="let i of [1,2,3,4]">
           <div class="pi">
             <div class="pi__inner">
               <div class="pi__image">
-                <img src="assets/images/no_image.jpg" />
+                <img src="assets/images/product/sp_{{i}}.jpg" />
               </div>
               <div class="pi__info">
                 <p class="pi__title">Sản phẩm {{i}}</p>
