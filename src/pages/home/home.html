@@ -1,19 +1,52 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dogo-primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Dogo App</ion-title>
+    <img height="36" src="assets/images/logo/dogo-logo.png">
+    <div class="navbar-button">
+      <button ion-button>
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+      <button ion-button>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </div>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content>
+  <!--Menu bar-->
+  <ion-grid class="menu-bar">
+    <ion-slides slidesPerView="3.5" spaceBetween="10">
+      <ion-slide *ngFor="let i of ['hàng mới', 'khuyến mãi', 'gia dụng', 'mẹ và bé', 'test5']">
+        <a href="javascript:void(0)" text-uppercase>
+          {{i}}
+        </a>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+
+  <!--Main slider-->
+  <ion-grid class="main-slider">
+    <ion-slides>
+      <ion-slide *ngFor="let i of [1,2,3]">
+        <a href="javascript:void(0)" text-uppercase>
+          <img src="assets/images/slider/banner_slider_1.png">
+        </a>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+  
   <!--Hiển thị demo 1 nhóm sản phẩm ngoài trang chủ-->
-  <ion-grid no-padding name="collection">
+  <ion-grid name="collection">
     <ion-row name="collection header">
-      <ion-col col-8 no-padding>
+      <ion-col col-8>
         <a href="/" text-uppercase>Gia dụng</a>
       </ion-col>
-      <ion-col col-4 text-right no-padding>
+      <ion-col col-4 text-right>
         <button>Xem tất cả</button>
       </ion-col>
     </ion-row>
@@ -26,7 +59,7 @@
                 <img src="assets/images/no_image.jpg" />
               </div>
               <div class="pi__info">
-                <p class="pi__title">Bình Nguyễn</p>
+                <p class="pi__title">Sản phẩm {{i}}</p>
                 <p class="pi__price">
                   100.000 VNĐ
                   <del class="compare-price">130.000 VNĐ</del>
