@@ -3,16 +3,40 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Dogo App</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <!--Hiển thị demo 1 nhóm sản phẩm ngoài trang chủ-->
+  <ion-grid no-padding name="collection">
+    <ion-row name="collection header">
+      <ion-col col-8 no-padding>
+        <a href="/" text-uppercase>Gia dụng</a>
+      </ion-col>
+      <ion-col col-4 text-right no-padding>
+        <button>Xem tất cả</button>
+      </ion-col>
+    </ion-row>
+    <ion-row name="collection products">
+      <ion-slides slidesPerView="2.5" spaceBetween="10">
+        <ion-slide *ngFor="let i of [1,2,2,3]">
+          <div class="pi">
+            <div class="pi__inner">
+              <div class="pi__image">
+                <img src="assets/images/no_image.jpg" />
+              </div>
+              <div class="pi__info">
+                <p class="pi__title">Bình Nguyễn</p>
+                <p class="pi__price">
+                  100.000 VNĐ
+                  <del class="compare-price">130.000 VNĐ</del>
+                </p>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+  <!--end-->
 </ion-content>
