@@ -17,9 +17,11 @@ iframe,
 img {
   max-width: 100%;
 }
-::-webkit-scrollbar { 
-    display: none; 
+
+::-webkit-scrollbar {
+  display: none;
 }
+
 a:link,
 a:visited,
 a:active {
@@ -41,8 +43,8 @@ a:active {
   &__image {}
   &__info {
     text-align: left;
-    p{
-    	margin: $gutter/2 0;
+    p {
+      margin: $gutter/2 0;
     }
   }
   &__title {
@@ -54,7 +56,7 @@ a:active {
     del.compare-price {
       font-size: 8pt;
     }
-    span.sale-off{
+    span.sale-off {
       font-size: 10pt;
     }
   }
@@ -63,10 +65,11 @@ a:active {
 //Sản phẩm-----------------------------------------
 //Giá so sánh
 .compare-price {
-	 color: $dg-compare-price-color;
+  color: $dg-compare-price-color;
 }
-.sale-off{
-	color: $dg-price-color;
+
+.sale-off {
+  color: $dg-price-color;
 }
 
 
@@ -98,8 +101,47 @@ a:active {
 }
 
 //button view more
-.btn-vw{
-	padding: $gutter/2;
-	background-color: $dg-btn-vw-color;
-	border: solid 1px $dg-btn-bd-vw-color;
+.btn-vw {
+  padding: $gutter/2;
+  background-color: $dg-btn-vw-color;
+  border: solid 1px $dg-btn-bd-vw-color;
+}
+
+.dogo-footer {
+  padding: 0;
+  margin-top: $gutter;
+  background-color: $dg-p-color;
+  .payments {
+    background-color: #fff;
+    .payments-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 10pt;
+    }
+  }
+  .sharing {
+    background-color: $dg-s-color;
+    &.title {}
+    &.facebook {}
+    &.youtube {}
+    &.bt {}
+  }
+  .sub-footer {
+    img {
+      float: left;
+      margin: $gutter/2 $gutter 0px 0px;
+    }
+    .company-info {
+      border-left: solid 2px #fff;
+      margin-left: 55px;
+      color: #fff;
+      h2 {
+      	font-weight: bold;
+      }
+      h2, p {
+        margin: 0;
+        font-size: 6pt;
+      }
+    }
+  }
 }

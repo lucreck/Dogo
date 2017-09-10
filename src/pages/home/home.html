@@ -74,4 +74,41 @@
     </ion-row>
   </ion-grid>
   <!--end-->
+  <div class="dogo-footer">
+    <ion-grid class="payments">
+      <ion-row>
+        <ion-col>
+          <p class="payments-title">Các hình thức thanh toán</p>
+          <img src="assets/images/payments.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="policies">
+      <ion-row>
+        <ion-col *ngFor="let i of [1,2,3]">
+          <img src="assets/images/polici_{{i}}.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="sharing">
+      <ion-row>
+        <ion-col *ngFor="let i of ['title',1,2,3,4]">
+          <img height="32" src="assets/images/share-{{i}}.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="sub-footer">
+      <ion-row>
+        <ion-col>
+          <img height="40" src="assets/images/logo/dogo-logo.png">
+          <div class="company-info">
+            <h2>CÔNG TY TNHH DOGO VIETNAM - ĐIỀU HÀNH BỞI BT GROUP</h2>
+            <p>Giấy CNĐKDN: 0308808888</p>
+            <p>Ngày cấp: 06/10/2017</p>
+            <p>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư TP.Hà Nội<p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
