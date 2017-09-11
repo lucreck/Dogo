@@ -1,35 +1,70 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dogo-primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Dogo App</ion-title>
+    <img height="36" src="assets/images/logo/dogo-logo.png">
+    <div class="navbar-button">
+      <button ion-button>
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+      <button ion-button>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </div>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content>
+  <!--Menu bar-->
+  <ion-grid class="menu-bar">
+    <ion-slides slidesPerView="3.5" spaceBetween="10">
+      <ion-slide *ngFor="let i of ['hàng mới', 'khuyến mãi', 'gia dụng', 'mẹ và bé', 'test5']">
+        <a href="javascript:void(0)" text-uppercase>
+          {{i}}
+        </a>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+  <!--Main slider-->
+  <ion-grid class="main-slider">
+    <ion-slides>
+      <ion-slide *ngFor="let i of [1,2,3]">
+        <a href="javascript:void(0)" text-uppercase>
+          <img src="assets/images/slider/banner_slider_1.png">
+        </a>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
   <!--Hiển thị demo 1 nhóm sản phẩm ngoài trang chủ-->
-  <ion-grid no-padding name="collection">
-    <ion-row name="collection header">
-      <ion-col col-8 no-padding>
-        <a href="/" text-uppercase>Gia dụng</a>
+  <ion-grid name="home-collection" *ngFor="let i of [1,2,3,4]">
+    <!--Thanh tiêu đề và nút xem tất cả-->
+    <ion-row class="home-collection-header">
+      <ion-col col-8>
+        <p class="home-title" href="/" text-uppercase>Gia dụng</p>
       </ion-col>
-      <ion-col col-4 text-right no-padding>
-        <button>Xem tất cả</button>
+      <ion-col col-4 text-right>
+        <button class="btn-vw">Xem tất cả</button>
       </ion-col>
     </ion-row>
+    <!--Slide danh sách sản phẩm-->
     <ion-row name="collection products">
-      <ion-slides slidesPerView="2.5" spaceBetween="10">
-        <ion-slide *ngFor="let i of [1,2,2,3]">
+      <ion-slides slidesPerView="2.5" spaceBetween="6">
+        <ion-slide *ngFor="let i of [1,2,3,4]">
+          <!--Sản phẩm -->
           <div class="pi">
             <div class="pi__inner">
               <div class="pi__image">
-                <img src="assets/images/no_image.jpg" />
+                <img src="assets/images/product/sp_{{i}}.jpg" />
               </div>
               <div class="pi__info">
-                <p class="pi__title">Bình Nguyễn</p>
+                <p class="pi__title">Sản phẩm có 2 dòng text {{i}}</p>
                 <p class="pi__price">
                   100.000 VNĐ
                   <del class="compare-price">130.000 VNĐ</del>
+                  <span class="sale-off">-25%</span>
                 </p>
               </div>
             </div>
@@ -39,4 +74,41 @@
     </ion-row>
   </ion-grid>
   <!--end-->
+  <div class="dogo-footer">
+    <ion-grid class="payments">
+      <ion-row>
+        <ion-col>
+          <p class="payments-title">Các hình thức thanh toán</p>
+          <img src="assets/images/payments.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="policies">
+      <ion-row>
+        <ion-col *ngFor="let i of [1,2,3]">
+          <img src="assets/images/polici_{{i}}.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="sharing">
+      <ion-row>
+        <ion-col *ngFor="let i of ['title',1,2,3,4]">
+          <img height="32" src="assets/images/share-{{i}}.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="sub-footer">
+      <ion-row>
+        <ion-col>
+          <img height="40" src="assets/images/logo/dogo-logo.png">
+          <div class="company-info">
+            <h2>CÔNG TY TNHH DOGO VIETNAM - ĐIỀU HÀNH BỞI BT GROUP</h2>
+            <p>Giấy CNĐKDN: 0308808888</p>
+            <p>Ngày cấp: 06/10/2017</p>
+            <p>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư TP.Hà Nội<p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

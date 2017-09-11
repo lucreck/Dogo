@@ -22,7 +22,15 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
+//font size = fz
 
+$gutter: 12px;
+
+$fs-title: 12pt;
+$fz-normal: 10pt;
+$fz-small: 8pt;
+
+$line-height: 18pt;
 
 
 // Named Color Variables
@@ -38,8 +46,48 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  dogo-primary: #23a8e1,
+  dogo-secondary: #3b589e
 );
+
+//dogo = dg
+//butotn - btn
+//primary = p
+//secondary = s
+//border = bd
+//view more = vw
+
+$dg-p-color: #23a8e1;
+$dg-s-color: #3b589e;
+
+//Màu nền app
+$dg-background-color: #f1f1f1;
+$background-color: $dg-background-color;
+
+//sử dụng cho gạch chân thanh điều hướng ngang đầu trang và nền đếm giỏ hàng
+$dg-hightlight-color: #f6ff00;
+
+//Màu các nút
+$dg-btn-p-color: $dg-p-color;
+$dg-btn-s-color: #db3235;
+
+//Màu nút call to action - mua ngay, giỏ hàng...
+$dg-btn-cta-color: $dg-btn-s-color;
+
+//Màu nút xem thêm, xem chi tiết...
+$dg-btn-vw-color: #ffffff;
+$dg-btn-bd-vw-color: #646464;
+
+//Màu chữ toàn trang
+$dg-text-color: #000000;
+
+//Màu giá
+$dg-price-color: #b82b2a;
+$dg-compare-price-color: #7d7d7d;
+
+//Màu link
+$dg-link-color: #3b589e;
 
 
 // App iOS Variables

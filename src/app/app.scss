@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,48 +12,136 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
 //Dogo styles - Loi Pham
-
-iframe, img{
-	max-width: 100%;
-}
-a:link, a:visited, a:active {
-    text-decoration: none;
+iframe,
+img {
+  max-width: 100%;
 }
 
-#header{
-
+::-webkit-scrollbar {
+  display: none;
 }
-#footer{
 
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
 }
+
+#header {}
+
+#footer {}
 
 
 //pi: product-item------------------------------------
 //viết tay cho sản phẩm hiển thị trong danh sách
-.pi{
-	&__inner{
-
-	}
-	&__image{
-
-	}
-	&__info{
-
-	}
-	&__title{
-
-	}
-	&__price{
-		del.compare-price{
-
-		}
-	}
+.pi {
+  &__inner {
+    background-color: #fff;
+    padding: $gutter/2;
+  }
+  &__image {}
+  &__info {
+    text-align: left;
+    p {
+      margin: $gutter/2 0;
+    }
+  }
+  &__title {
+    font-size: 10pt;
+  }
+  &__price {
+    font-size: 12pt;
+    color: $dg-price-color;
+    del.compare-price {
+      font-size: 8pt;
+    }
+    span.sale-off {
+      font-size: 10pt;
+    }
+  }
 }
 
 //Sản phẩm-----------------------------------------
 //Giá so sánh
-.compare-price{
+.compare-price {
+  color: $dg-compare-price-color;
+}
 
+.sale-off {
+  color: $dg-price-color;
+}
+
+
+//Header
+.navbar-button {
+  float: right;
+  button {
+    background: none;
+    margin: 0;
+    padding: 0 6px;
+  }
+}
+
+//Thanh menu dưới header
+.menu-bar {
+  padding: 0;
+  background-color: $dg-s-color;
+  .swiper-slide-active {
+    border-bottom: solid 3px $dg-hightlight-color;
+    a {
+      font-weight: bold;
+    }
+  }
+  a {
+    color: #fff;
+    line-height: 18pt;
+    font-size: 8pt;
+  }
+}
+
+//button view more
+.btn-vw {
+  padding: $gutter/2;
+  background-color: $dg-btn-vw-color;
+  border: solid 1px $dg-btn-bd-vw-color;
+}
+
+.dogo-footer {
+  padding: 0;
+  margin-top: $gutter;
+  background-color: $dg-p-color;
+  .payments {
+    background-color: #fff;
+    .payments-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 10pt;
+    }
+  }
+  .sharing {
+    background-color: $dg-s-color;
+    &.title {}
+    &.facebook {}
+    &.youtube {}
+    &.bt {}
+  }
+  .sub-footer {
+    img {
+      float: left;
+      margin: $gutter/2 $gutter 0px 0px;
+    }
+    .company-info {
+      border-left: solid 2px #fff;
+      margin-left: 55px;
+      color: #fff;
+      h2 {
+      	font-weight: bold;
+      }
+      h2, p {
+        margin: 0;
+        font-size: 6pt;
+      }
+    }
+  }
 }
