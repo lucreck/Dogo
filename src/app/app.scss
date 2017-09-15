@@ -153,7 +153,7 @@ a:active {
   }
 }
 
-.button-ios {
+.button {
   border-radius: 4px;
   height: 2.8em;
   font-size: 1.6rem;
@@ -168,24 +168,24 @@ a:active {
   color: color($colors, text-light);
 }
 
-.toolbar-background-ios {
+.toolbar-background {
   background: color($colors, dogo-primary);
 }
 
-.toolbar-title-ios {
+.toolbar-title {
   color: color($colors, text-light);
 }
 
-.toolbar-ios ion-title.title-modal {
+.toolbar ion-title.title-modal {
   padding: 0 0 1px;
   position: absolute;
   width: 68%;
-  .toolbar-title-ios {
+  .toolbar-title {
     font-weight: none;
   }
 }
 
-.ion-page.show-page .toolbar-ios {
+.ion-page.show-page .toolbar {
   min-height: 61px;
 }
 
@@ -229,7 +229,7 @@ a:active {
   .list>.item-block:first-child {
     border-top: none;
   }
-  .button-ios {
+  .button {
     &.btn-social-gg {
       background-color: #db3235;
     }
@@ -264,7 +264,7 @@ a:active {
         }
       }
     }
-    .button-ios {
+    .button {
       &[full] {
         background-color: #3b589e;
         border-radius: 0;
@@ -278,10 +278,10 @@ a:active {
       color: #8c9093;
       font-size: 26px;
     }
-    .item-ios.item-label-stacked [item-right],
-    .item-ios.item-label-floating [item-right],
-    .item-ios.item-label-stacked [item-end],
-    .item-ios.item-label-floating [item-end] {
+    .item.item-label-stacked [item-right],
+    .item.item-label-floating [item-right],
+    .item.item-label-stacked [item-end],
+    .item.item-label-floating [item-end] {
       margin-top: 0;
       margin-bottom: -28px;
     }
