@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 // // login
 // import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 
-import { MyApp, ModalContentPage} from './app.component';
+import { MyApp} from './app.component';
 import { HomePage, collectionHome } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { AccountPage } from '../pages/account/account';
 import { UserData } from '../providers/user-data';
 
 
@@ -24,9 +25,9 @@ import { ConferenceData } from '../providers/conference-data';
   declarations: [
     MyApp,
     HomePage,
-    collectionHome,
     ListPage,
-    ModalContentPage,
+    AccountPage,
+    collectionHome
     // Modal2Page,
     // ModalContentPage
   ],
@@ -45,9 +46,9 @@ import { ConferenceData } from '../providers/conference-data';
   entryComponents: [
     MyApp,
     HomePage,
-    collectionHome,
     ListPage,
-    ModalContentPage
+    collectionHome,
+    AccountPage
     // Modal2Page,
     // ModalContentPage
   ],

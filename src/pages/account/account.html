@@ -1,0 +1,210 @@
+<ion-header color="primary">
+  <ion-toolbar>
+    <ion-title text-uppercase class="title-modal">
+      Đăng nhập / Đăng ký
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()" class="fsize-38" padding-horizontal>
+        <ion-icon name="close"></ion-icon>
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-segment [(ngModel)]="tabAcc">
+    <ion-segment-button value="loginTab" text-uppercase>
+      đăng nhập
+    </ion-segment-button>
+    <ion-segment-button value="regTab" text-uppercase>
+      đăng ký
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="tabAcc">
+    <ion-list *ngSwitchCase="'loginTab'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <form #loginForm="ngForm" novalidate>
+            <ion-list>
+              <ion-item>
+                <ion-label floating>Địa chỉ email</ion-label>
+                <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" required>
+                </ion-input>
+                <button ion-button item-right type="reset" class="fs-clear-btn">
+                  <ion-icon name="close"></ion-icon>
+                  <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+                Địa chỉ email không hợp lệ!
+              </p>
+              <ion-item>
+                <ion-label floating>Mật khẩu</ion-label>
+                <ion-input [(ngModel)]="login.password" name="password" type="{{type}}" #password="ngModel" required>
+                </ion-input>
+                <button ion-button item-right class="fs-eye" (click)="showPassword()">
+                  <ion-icon name="{{iconPass}}" md="md-{{iconPass}}" showWhen="android, windows"></ion-icon>
+                  <ion-icon ios="ios-{{iconPass}}" md="md-{{iconPass}}"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+                Mật khẩu không hợp lệ!
+              </p>
+            </ion-list>
+            <ion-row>
+              <ion-col class="fget-pas" text-right padding-bottom>
+                <a>Quên mật khẩu?</a>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-12 padding-left>
+                <button ion-button (click)="onLogin(loginForm)" type="submit" full text-uppercase>Đăng nhập</button>
+              </ion-col>
+            </ion-row>
+          </form>
+          <ion-row>
+            <ion-col col-12 text-center padding-vertical>
+              <b>Hoặc đăng nhập bằng</b>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8 offset-2 text-center>
+              <button ion-button block text-uppercase icon-left class="btn-social-gg">
+                <ion-icon name="logo-google"></ion-icon> Tài khoản google</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8 offset-2 text-center>
+              <button ion-button block text-uppercase icon-left class="btn-social-fb">
+                <ion-icon name="logo-facebook"></ion-icon> Tài khoản facebook</button>
+            </ion-col>
+          </ion-row>
+        </ion-thumbnail>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'regTab'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <form #signupForm="ngForm" novalidate>
+            <ion-list>
+              <ion-row>
+                <ion-col col-12 padding-top>
+                  <b>Cần điền tất cả các mục</b>
+                </ion-col>
+              </ion-row>
+              <ion-item>
+                <ion-label floating>Họ tên đầy đủ</ion-label>
+                <ion-input [(ngModel)]="signup.fullname" name="fullname" type="text" #fullname="ngModel" spellcheck="false" autocapitalize="off" required>
+                </ion-input>
+                <button ion-button item-right type="reset" class="fs-clear-btn">
+                  <ion-icon name="close"></ion-icon>
+                  <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="fullname.valid || submitted == false" color="danger" padding-left>
+                Mục này còn thiếu
+              </p>
+              <ion-item>
+                <ion-label floating>Địa chỉ email</ion-label>
+                <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" required>
+                </ion-input>
+                <button ion-button item-right type="reset" class="fs-clear-btn">
+                  <ion-icon name="close"></ion-icon>
+                  <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+                Địa chỉ email không hợp lệ!
+              </p>
+              <ion-item padding-bottom>
+                <ion-label floating>Số điện thoại</ion-label>
+                <ion-input [(ngModel)]="signup.phone" name="phone" type="number" #phone="ngModel" spellcheck="false" autocapitalize="off" required>
+                </ion-input>
+                <button ion-button item-right type="reset" class="fs-clear-btn">
+                  <ion-icon name="close"></ion-icon>
+                  <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="phone.valid || submitted == false" color="danger" padding-left>
+                Số điện thoại không hợp lệ!
+              </p>
+              <ion-item padding-top>
+                <ion-label floating>Mật khẩu</ion-label>
+                <ion-input [(ngModel)]="signup.password" name="password" type="{{type}}" #password="ngModel" required>
+                </ion-input>
+                <button ion-button item-right class="fs-eye" (click)="showPassword()">
+                  <ion-icon name="{{iconPass}}" md="md-{{iconPass}}" showWhen="android, windows"></ion-icon>
+                  <ion-icon ios="ios-{{iconPass}}" md="md-{{iconPass}}"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+                Mật khẩu không hợp lệ!
+              </p>
+              <p ion-text padding>
+                Mật khẩu phải bao gồm ít nhất 6 ký tự và 1 chữ hoa
+              </p>
+              <ion-item padding-bottom>
+                <ion-label floating>Nhập lại mật khẩu</ion-label>
+                <ion-input [(ngModel)]="signup.repassword" name="repassword" type="{{type}}" #repassword="ngModel" required>
+                </ion-input>
+                <button ion-button item-right class="fs-eye" (click)="showPassword()">
+                  <ion-icon name="{{iconPass}}" md="md-{{iconPass}}" showWhen="android, windows"></ion-icon>
+                  <ion-icon ios="ios-{{iconPass}}" md="md-{{iconPass}}"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="repassword.valid || submitted == false" color="danger" padding-left>
+                Mật khẩu nhập lại không đúng!
+              </p>
+              <ion-item padding-top>
+                <ion-label floating text-uppercase>mã giới thiệu</ion-label>
+                <ion-input [(ngModel)]="login.code" name="code" type="text" #code="ngModel" spellcheck="false" autocapitalize="off" required>
+                </ion-input>
+                <button ion-button item-right type="reset" class="fs-clear-btn">
+                  <ion-icon name="close"></ion-icon>
+                  <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+                </button>
+              </ion-item>
+              <p ion-text [hidden]="code.valid || submitted == false" color="danger" padding-left>
+                Địa chỉ email không hợp lệ!
+              </p>
+              <p ion-text padding>
+                Mã giới thiệu được tạo ra bởi thành viên chính thức
+              </p>
+              <ion-item padding-vertical class="border-bt-no">
+                <ion-label>Tôi muốn nhận các tin khuyến mại qua email</ion-label>
+                <ion-toggle checked="true"></ion-toggle>
+              </ion-item>
+            </ion-list>
+            <ion-row>
+              <ion-col col-12 padding-left>
+                <button ion-button (click)="onRegis(signupForm)" type="submit" full text-uppercase>Đăng ký ngay</button>
+              </ion-col>
+            </ion-row>
+          </form>
+          <ion-row padding-bottom>
+            <ion-col col-12 text-center padding-top>
+              <p padding-left>Tôi đã đọc và hiểu rõ các <a>điều khoản</a> và <a>chính sách bảo mật</a> của hệ thống Dogo Apps</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 text-center padding-vertical>
+              <b>Hoặc đăng ký bằng</b>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8 offset-2 text-center>
+              <button ion-button block text-uppercase icon-left class="btn-social-gg">
+                <ion-icon name="logo-google"></ion-icon> Tài khoản google</button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8 offset-2 text-center>
+              <button ion-button block text-uppercase icon-left class="btn-social-fb">
+                <ion-icon name="logo-facebook"></ion-icon> Tài khoản facebook</button>
+            </ion-col>
+          </ion-row>
+        </ion-thumbnail>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
