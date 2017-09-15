@@ -1,9 +1,12 @@
 <ion-header>
   <ion-navbar color="dogo-primary">
-    <button ion-button menuToggle>
+    <!-- <button ion-button menuToggle> -->
+    <button ion-button (click)="openMenu('main')">
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-title>
     <img height="36" src="assets/images/logo/dogo-logo.png">
+    </ion-title>
     <div class="navbar-button">
       <button ion-button>
         <ion-icon name="search"></ion-icon>
@@ -11,8 +14,8 @@
       <button ion-button>
         <ion-icon name="cart"></ion-icon>
       </button>
-      <button ion-button>
-        <ion-icon name="more"></ion-icon>
+      <button ion-button (click)="openMenu('user')">
+        <ion-icon name="more"></ion-icon> 
       </button>
     </div>
   </ion-navbar>
@@ -20,9 +23,9 @@
 <ion-content>
   <!--Menu bar-->
   <ion-grid class="menu-bar">
-    <ion-slides slidesPerView="3.5" spaceBetween="10">
+    <ion-slides slidesPerView="3.5" spaceBetween="0">
       <ion-slide *ngFor="let i of ['hàng mới', 'khuyến mãi', 'gia dụng', 'mẹ và bé', 'test5']">
-        <a href="javascript:void(0)" text-uppercase>
+        <a href="javascript:void(0)" text-uppercase (click)="viewCollection({title: i})">
           {{i}}
         </a>
       </ion-slide>
@@ -38,41 +41,9 @@
       </ion-slide>
     </ion-slides>
   </ion-grid>
+  
   <!--Hiển thị demo 1 nhóm sản phẩm ngoài trang chủ-->
-  <ion-grid name="home-collection" *ngFor="let i of [1,2,3,4]">
-    <!--Thanh tiêu đề và nút xem tất cả-->
-    <ion-row class="home-collection-header">
-      <ion-col col-8>
-        <p class="home-title" href="/" text-uppercase>Gia dụng</p>
-      </ion-col>
-      <ion-col col-4 text-right>
-        <button class="btn-vw">Xem tất cả</button>
-      </ion-col>
-    </ion-row>
-    <!--Slide danh sách sản phẩm-->
-    <ion-row name="collection products">
-      <ion-slides slidesPerView="2.5" spaceBetween="6">
-        <ion-slide *ngFor="let i of [1,2,3,4]">
-          <!--Sản phẩm -->
-          <div class="pi">
-            <div class="pi__inner">
-              <div class="pi__image">
-                <img src="assets/images/product/sp_{{i}}.jpg" />
-              </div>
-              <div class="pi__info">
-                <p class="pi__title">Sản phẩm có 2 dòng text {{i}}</p>
-                <p class="pi__price">
-                  100.000 VNĐ
-                  <del class="compare-price">130.000 VNĐ</del>
-                  <span class="sale-off">-25%</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </ion-slide>
-      </ion-slides>
-    </ion-row>
-  </ion-grid>
+  <collection-home></collection-home>
   <!--end-->
   <div class="dogo-footer">
     <ion-grid class="payments">
@@ -111,4 +82,5 @@
       </ion-row>
     </ion-grid>
   </div>
+  <!-- <button ion-button (click)="scrollTo()" style="font-size: 50px; color: #000">Down 500px</button> -->
 </ion-content>

@@ -1,5 +1,8 @@
 page-home {
-
+.toolbar-ios ion-title {
+    padding: 0 45px 1px;
+    width: 45%;
+}
 }
 .home-collection-header{
 	margin: $gutter/2 0 $gutter 0;

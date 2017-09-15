@@ -74,12 +74,18 @@ a:active {
 
 
 //Header
+.button-md {
+  box-shadow: none;
+  background-color: transparent;
+}
+
 .navbar-button {
   float: right;
   button {
     background: none;
     margin: 0;
     padding: 0 6px;
+    box-shadow: none;
   }
 }
 
@@ -109,7 +115,7 @@ a:active {
 
 .dogo-footer {
   padding: 0;
-  margin-top: $gutter;
+  margin-top: $gutter - 2;
   background-color: $dg-p-color;
   .payments {
     background-color: #fff;
@@ -136,11 +142,192 @@ a:active {
       margin-left: 55px;
       color: #fff;
       h2 {
-      	font-weight: bold;
+        font-weight: bold;
       }
-      h2, p {
+      h2,
+      p {
         margin: 0;
         font-size: 6pt;
+      }
+    }
+  }
+}
+
+.button-ios {
+  border-radius: 4px;
+  height: 2.8em;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: transparent;
+  margin: 0.4rem 0.2rem;
+  padding: 0 1em;
+}
+
+.fsize-38 {
+  font-size: 38px;
+  color: color($colors, text-light);
+}
+
+.toolbar-background-ios {
+  background: color($colors, dogo-primary);
+}
+
+.toolbar-title-ios {
+  color: color($colors, text-light);
+}
+
+.toolbar-ios ion-title.title-modal {
+  padding: 0 0 1px;
+  position: absolute;
+  width: 68%;
+  .toolbar-title-ios {
+    font-weight: none;
+  }
+}
+
+.ion-page.show-page .toolbar-ios {
+  min-height: 61px;
+}
+
+.modal-wrapper {
+  .header .toolbar-background {
+    border-color: color($colors, dogo-primary);
+  }
+  ion-segment {
+    background: color($colors, dogo-primary);
+  }
+  .segment-button {
+    height: 4.2rem;
+    border-width: none;
+    border-style: none;
+    line-height: 4rem;
+    font-size: 16px;
+    color: #fff;
+    border-bottom: 4px solid transparent;
+    &:first-of-type {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &.segment-activated {
+      border-bottom: 4px solid #fff;
+      background-color: transparent;
+    }
+  }
+  ion-avatar[item-left],
+  ion-thumbnail[item-left],
+  ion-avatar[item-start],
+  ion-thumbnail[item-start] {
+    width: 100%;
+  }
+  .list>.item-block:last-child,
+  .list>.item-wrapper:last-child .item-block {
+    border-bottom: none;
+    background: #fff;
+  }
+  .list>.item-block:first-child {
+    border-top: none;
+  }
+  .button-ios {
+    &.btn-social-gg {
+      background-color: #db3235;
+    }
+    &.btn-social-fb {
+      background-color: #3e569e;
+    }
+  }
+  ion-thumbnail[item-start] {
+    margin: 8px 24px 8px 0;
+  }
+  form {
+    .scroll-content {
+      background: #fff;
+    }
+    .item-button {
+      // padding: 0;
+    }
+    .list {
+      .item-block {
+        background: #fff;
+        ion-label {
+          color: #aaa;
+        }
+        .item-inner {
+          border-bottom: 2px solid #dbdbdb;
+        }
+        &.input-has-value,
+        &.input-has-focus {
+          .item-inner {
+            border-bottom: 2px solid #8c9093;
+          }
+        }
+      }
+    }
+    .button-ios {
+      &[full] {
+        background-color: #3b589e;
+        border-radius: 0;
+      }
+    }
+    .fs-eye {
+      font-size: 20px;
+      color: #8c9093;
+    }
+    .fs-clear-btn {
+      color: #8c9093;
+      font-size: 26px;
+    }
+    .item-ios.item-label-stacked [item-right],
+    .item-ios.item-label-floating [item-right],
+    .item-ios.item-label-stacked [item-end],
+    .item-ios.item-label-floating [item-end] {
+      margin-top: 0;
+      margin-bottom: -28px;
+    }
+    .list .item-block.border-bt-no .item-inner {
+      border-bottom: none;
+      ion-label {
+        color: #000;
+        font-size: 14px;
+      }
+    }
+  }
+  ion-row p {
+    color: #000;
+    a {
+      text-decoration: underline;
+    }
+  }
+  .toggle {
+    width: 44px;
+    height: 16px;
+    padding-left: 0;
+    &.toggle-checked {
+      .toggle-icon {
+
+        border-radius: 6px;
+        background-color: #897f80;
+        .toggle-inner {
+        left: 2px;
+        top: -4px;
+        width: 24px;
+        height: 24px;
+          background-color: #405ba0;
+        }
+      }
+    }
+    .toggle-icon {
+      border-radius: 6px;
+      background-color: #e6e6e6;
+
+      &:before {}
+      .toggle-inner {
+        left: 1px;
+        top: -5px;
+        width: 24px;
+        height: 24px;
+        background-color: #fff;
       }
     }
   }
