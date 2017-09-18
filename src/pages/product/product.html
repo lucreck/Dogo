@@ -1,0 +1,156 @@
+<!--
+  Generated template for the ProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<page-header></page-header>
+<ion-content>
+  <ion-grid no-padding>
+    <ion-navbar class="breadcrumb" padding-left>
+      <!-- <ion-title text-uppercase>Tổng quan sản phẩm</ion-title> -->
+      <ion-slides slidesPerView="1.5" spaceBetween="0" padding-left>
+        <ion-slide *ngFor="let i of ['Tổng quan sản phẩm', 'Chi tiết sản phẩm']">
+          <a href="javascript:void(0)" text-uppercase (click)="itemTapped($event, item)">
+            <!-- <a href="javascript:void(0)" text-uppercase [navPush]="pushPage" [navParams]="params"> -->
+            {{i}}
+          </a>
+        </ion-slide>
+      </ion-slides>
+    </ion-navbar>
+  </ion-grid>
+  <ion-grid padding-horizontal class="product-overview">
+    <h5 class="product__title">Tấm phủ tủ lạnh chống thấm cho nhà thêm xinh</h5>
+    <div class="product__price">
+      33.000 VNĐ
+      <del class="compare-price">55.000 VNĐ</del>
+      <span class="sale-off">-40%</span>
+    </div>
+    <div class="product__img">
+      <ion-slides pager>
+        <ion-slide *ngFor="let i of [1,2,3,4]">
+          <img src="assets/images/product/sp_{{i}}.jpg" />
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </ion-grid>
+  <!-- san pham cung nha san xuat (sp lien quan) -->
+  <ion-grid name="product-related">
+    <!--Thanh tiêu đề và nút xem tất cả-->
+    <ion-row class="product-related-header">
+      <ion-col col-8>
+        <p class="collection-title" href="/">Sản phẩm khác của nhà sản xuất</p>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <button class="btn-vw" (click)="itemTapped($event, item)">Xem tất cả</button>
+      </ion-col>
+    </ion-row>
+    <!--Slide danh sách sản phẩm-->
+    <ion-row name="collection products">
+      <ion-slides slidesPerView="2.5" spaceBetween="6">
+        <ion-slide *ngFor="let i of [1,2,3,4]">
+          <!--Sản phẩm -->
+          <div class="pi">
+            <div class="pi__inner">
+              <div class="pi__image">
+                <img src="assets/images/product/sp_{{i}}.jpg" />
+              </div>
+              <div class="pi__info">
+                <p class="pi__title">Sản phẩm có 2 dòng text {{i}}</p>
+                <p class="pi__price">
+                  100.000 VNĐ
+                  <del class="compare-price">130.000 VNĐ</del>
+                  <span class="sale-off">-25%</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 no-padding>
+        <div class="detail-product">
+          <div class="detail-title">
+            Chi tiết sản phẩm
+          </div>
+          <div><b>Thông số ký thuật</b></div>
+          <ul>
+            <li>Bảo vệ, giữ sạch nóc tủ lạnh tránh mọi bụi bẩn và chống thấm nước tốt</li>
+            <li>Sản phẩm được làm từ chất liệu vải nilon siêu bền; chống thấm; giúp bảo vệ máy giặt và lò vi sóng khỏi bụi bẩn, nước...</li>
+            <li>Hai bên có thêm nhiều ngăn nhỏ để đựng đồ: Giúp bạn tiết kiệm không gian và tiện ích hơn cho việc nấu nướng.</li>
+            <li>Khăn phủ vừa vặn lên phần đầu, che phủ được cả 2 bên hông máy</li>
+            <li>Vật trang trí cho tủ lạnh, lò vi sóng, và không gian căn phòng sinh động hơn</li>
+            <li>Kích thước: Phủ tủ lạnh 130cm x 56cm</li>
+            <li>Giao màu ngẫu nhiên</li>
+          </ul>
+          <div class="mg-center">
+            <button class="btn-vw" text-uppercase>Xem chi tiết sản phẩm</button>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--end-->
+  <div class="dogo-footer">
+    <ion-grid class="payments">
+      <ion-row>
+        <ion-col>
+          <p class="payments-title">Các hình thức thanh toán</p>
+          <img src="assets/images/payments.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- San pham da xem -->
+  <ion-grid name="product-related" class="mg-bt-110">
+    <!--Thanh tiêu đề và nút xem tất cả-->
+    <ion-row class="product-related-header">
+      <ion-col col-8>
+        <p class="collection-title" href="/">Các sản phẩm đã xem</p>
+      </ion-col>
+      <ion-col col-4 text-right>
+        <button class="btn-vw" (click)="itemTapped($event, item)">Xem tất cả</button>
+      </ion-col>
+    </ion-row>
+    <!--Slide danh sách sản phẩm-->
+    <ion-row name="collection products">
+      <ion-slides slidesPerView="2.5" spaceBetween="6">
+        <ion-slide *ngFor="let i of [1,2,3,4]">
+          <!--Sản phẩm -->
+          <div class="pi">
+            <div class="pi__inner">
+              <div class="pi__image">
+                <img src="assets/images/product/sp_{{i}}.jpg" />
+              </div>
+              <div class="pi__info">
+                <p class="pi__title">Sản phẩm có 2 dòng text {{i}}</p>
+                <p class="pi__price">
+                  100.000 VNĐ
+                  <del class="compare-price">130.000 VNĐ</del>
+                  <span class="sale-off">-25%</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="bottom-fixed" no-padding>
+    <ion-row>
+      <ion-col col-2>
+        <div class="bt-f-left">
+          <ion-icon ios="ios-heart" md="md-heart"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col col-10>
+        <div class="bt-f-right" text-uppercase>
+          <ion-icon ios="ios-cart" md="md-cart"></ion-icon> Mua ngay
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

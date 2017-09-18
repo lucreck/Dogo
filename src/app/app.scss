@@ -63,13 +63,21 @@ a:active {
 }
 
 //Sản phẩm-----------------------------------------
+.product__price {
+  font-size: 12pt;
+  color: $dg-price-color;
+  padding-bottom: 20px;
+}
+
 //Giá so sánh
 .compare-price {
   color: $dg-compare-price-color;
+  font-size: 8pt;
 }
 
 .sale-off {
   color: $dg-price-color;
+  font-size: 10pt;
 }
 
 
@@ -153,6 +161,10 @@ a:active {
   }
 }
 
+.ion-page>ion-content {
+  top: 61px; //your headers height
+}
+
 .button {
   border-radius: 4px;
   height: 2.8em;
@@ -179,13 +191,14 @@ a:active {
 .toolbar ion-title.title-modal {
   padding: 0 0 1px;
   position: absolute;
-  width: 68%;
+  width: 90%;
   .toolbar-title {
     font-weight: none;
   }
 }
 
-.ion-page.show-page .toolbar {
+.ion-page.show-page .toolbar,
+.toolbar-ios {
   min-height: 61px;
 }
 
@@ -255,6 +268,7 @@ a:active {
         }
         .item-inner {
           border-bottom: 2px solid #dbdbdb;
+          padding-right: 0;
         }
         &.input-has-value,
         &.input-has-focus {
@@ -284,12 +298,16 @@ a:active {
     .item.item-label-floating [item-end] {
       margin-top: 0;
       margin-bottom: -28px;
+      margin-right: 0;
+      padding-right: 0;
     }
     .list .item-block.border-bt-no .item-inner {
       border-bottom: none;
       ion-label {
         color: #000;
         font-size: 14px;
+        text-overflow: unset;
+        white-space: unset;
       }
     }
   }
@@ -300,35 +318,98 @@ a:active {
     }
   }
   .toggle {
-    width: 44px;
-    height: 16px;
+    width: 38px;
+    height: 12px;
     padding-left: 0;
+    padding-right: 2px;
     &.toggle-checked {
       .toggle-icon {
 
-        border-radius: 6px;
+        border-radius: 4px;
         background-color: #897f80;
         .toggle-inner {
-        left: 2px;
-        top: -4px;
-        width: 24px;
-        height: 24px;
+          left: 2px;
+          top: -3px;
+          width: 18px;
+          height: 18px;
           background-color: #405ba0;
         }
       }
     }
     .toggle-icon {
-      border-radius: 6px;
+      border-radius: 4px;
       background-color: #e6e6e6;
 
       &:before {}
       .toggle-inner {
         left: 1px;
-        top: -5px;
-        width: 24px;
-        height: 24px;
+        top: -4px;
+        width: 17px;
+        height: 17px;
         background-color: #fff;
       }
     }
+  }
+}
+
+// breadcrumb
+.breadcrumb {
+
+  &.toolbar,
+  &.toolbar-ios {
+    min-height: 29px !important;
+    padding: 0;
+    ion-title {
+      width: 100%;
+    }
+  }
+  .toolbar-background,
+  .toolbar-background-ios {
+    background: #000;
+  }
+  .back-button {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+  }
+  .back-button-ios {
+    min-height: unset;
+  }
+  .bar-button-ios {
+    height: unset;
+  }
+  .toolbar-title {
+    font-size: 14px;
+  }
+  .back-button-icon-ios {
+    font-size: 22px;
+  }
+}
+.mg-bt-110 {
+  margin-bottom: 110px;
+}
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  .bt-f-left {
+    background-color: #3b589e;
+    text-align: center;
+    line-height: 2.5;
+    margin: auto;
+    font-size: 18px;
+  }
+  .bt-f-right {
+    background-color: #db3235;
+    color: #fff;
+    text-align: center;
+    line-height: 2.5;
+    margin: auto;
+    font-size: 18px;
+    margin-left: 3px;
+  }
+  ion-icon {
+    color: #fff;
   }
 }

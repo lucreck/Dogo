@@ -9,16 +9,17 @@ import { MyApp} from './app.component';
 import { HomePage, collectionHome } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { AccountPage } from '../pages/account/account';
+import { HeaderPage } from '../pages/header/header';
 import { UserData } from '../providers/user-data';
-
-
-// import { Modal2Page, ModalContentPage } from '../pages/modal2/modal2';
+// collection page
+import { CollectionsPage } from '../pages/collections/collections';
+// Product page
+import { ProductPage } from '../pages/product/product';
 
 import { FormBuilder } from '@angular/forms';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {IonicStorageModule} from '@ionic/storage';
-// import { Storage } from '@ionic/storage';
 import { ConferenceData } from '../providers/conference-data';
 
 @NgModule({
@@ -27,17 +28,19 @@ import { ConferenceData } from '../providers/conference-data';
     HomePage,
     ListPage,
     AccountPage,
-    collectionHome
-    // Modal2Page,
-    // ModalContentPage
+    collectionHome,
+    CollectionsPage,
+    HeaderPage,
+    ProductPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
 
     IonicModule.forRoot(MyApp, {
-      backButtonIcon: "ios-arrow-back",
-      iconMode: "ios",
+      backButtonText: '',
+      backButtonIcon: "md-arrow-back",
+      // iconMode: "ios",
       tabsPlacement: "bottom"
     }),
     IonicStorageModule.forRoot()
@@ -48,9 +51,10 @@ import { ConferenceData } from '../providers/conference-data';
     HomePage,
     ListPage,
     collectionHome,
-    AccountPage
-    // Modal2Page,
-    // ModalContentPage
+    AccountPage,
+    CollectionsPage,
+    HeaderPage,
+    ProductPage
   ],
   providers: [
     StatusBar,
@@ -58,6 +62,7 @@ import { ConferenceData } from '../providers/conference-data';
     FormBuilder,
     ConferenceData,
     UserData,
+    // NavParams,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

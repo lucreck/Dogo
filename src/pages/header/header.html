@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="dogo-primary">
+    <!-- <button ion-button menuToggle> -->
+    <button ion-button (click)="openMenu('main')">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img height="36" src="assets/images/logo/dogo-logo.png">
+    </ion-title>
+    <div class="navbar-button">
+      <button ion-button>
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+      <button ion-button (click)="openMenu('user')">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </div>
+  </ion-navbar>
+</ion-header>
