@@ -1,6 +1,6 @@
-<ion-header>
-  <ion-navbar color="dogo-primary">
     <!-- <button ion-button menuToggle> -->
+<!-- <ion-header>
+  <ion-navbar color="dogo-primary">
     <button ion-button (click)="openMenu('main')">
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -19,13 +19,15 @@
       </button>
     </div>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
+<page-header></page-header>
 <ion-content>
   <!--Menu bar-->
   <ion-grid class="menu-bar">
     <ion-slides slidesPerView="3.5" spaceBetween="0">
       <ion-slide *ngFor="let i of ['hàng mới', 'khuyến mãi', 'gia dụng', 'mẹ và bé', 'test5']">
-        <a href="javascript:void(0)" text-uppercase (click)="viewCollection({title: i})">
+        <a href="javascript:void(0)" text-uppercase (click)="itemTapped($event, item)">
+        <!-- <a href="javascript:void(0)" text-uppercase [navPush]="pushPage" [navParams]="params"> -->
           {{i}}
         </a>
       </ion-slide>

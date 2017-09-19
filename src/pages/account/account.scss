@@ -1,3 +1,8 @@
 page-account {
 
 }
+ion-modal {
+	.ion-page > ion-content {
+		top:0;
+	}
+}

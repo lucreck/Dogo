@@ -28,9 +28,9 @@
             <ion-list>
               <ion-item>
                 <ion-label floating>Địa chỉ email</ion-label>
-                <ion-input [(ngModel)]="login.username" name="username" type="email" #username="ngModel" spellcheck="false" autocapitalize="off" required>
+                <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" required>
                 </ion-input>
-                <button ion-button item-right clear type="reset" class="fs-clear-btn">
+                <button ion-button item-right type="reset" class="fs-clear-btn">
                   <ion-icon name="close"></ion-icon>
                   <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
                 </button>
@@ -42,7 +42,7 @@
                 <ion-label floating>Mật khẩu</ion-label>
                 <ion-input [(ngModel)]="login.password" name="password" type="{{type}}" #password="ngModel" required>
                 </ion-input>
-                <button ion-button item-right clear class="fs-eye" (click)="showPassword()">
+                <button ion-button item-right class="fs-eye" (click)="showPassword()">
                   <ion-icon name="{{iconPass}}" md="md-{{iconPass}}" showWhen="android, windows"></ion-icon>
                   <ion-icon ios="ios-{{iconPass}}" md="md-{{iconPass}}"></ion-icon>
                 </button>
@@ -68,13 +68,13 @@
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col col-10 offset-1 text-center>
+            <ion-col col-8 offset-2 text-center>
               <button ion-button block text-uppercase icon-left class="btn-social-gg">
                 <ion-icon name="logo-google"></ion-icon> Tài khoản google</button>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col col-10 offset-1 text-center>
+            <ion-col col-8 offset-2 text-center>
               <button ion-button block text-uppercase icon-left class="btn-social-fb">
                 <ion-icon name="logo-facebook"></ion-icon> Tài khoản facebook</button>
             </ion-col>
@@ -96,7 +96,7 @@
                 <ion-label floating>Họ tên đầy đủ</ion-label>
                 <ion-input [(ngModel)]="signup.fullname" name="fullname" type="text" #fullname="ngModel" spellcheck="false" autocapitalize="off" required>
                 </ion-input>
-                <button ion-button item-right clear type="reset" class="fs-clear-btn">
+                <button ion-button item-right type="reset" class="fs-clear-btn">
                   <ion-icon name="close"></ion-icon>
                   <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
                 </button>
@@ -106,9 +106,9 @@
               </p>
               <ion-item>
                 <ion-label floating>Địa chỉ email</ion-label>
-                <ion-input [(ngModel)]="signup.username" name="username" type="email" #username="ngModel" spellcheck="false" autocapitalize="off" required>
+                <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" required>
                 </ion-input>
-                <button ion-button item-right clear type="reset" class="fs-clear-btn">
+                <button ion-button item-right type="reset" class="fs-clear-btn">
                   <ion-icon name="close"></ion-icon>
                   <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
                 </button>
@@ -118,9 +118,9 @@
               </p>
               <ion-item padding-bottom>
                 <ion-label floating>Số điện thoại</ion-label>
-                <ion-input [(ngModel)]="signup.phone" name="phone" type="tel" #phone="ngModel" spellcheck="false" autocapitalize="off" required>
+                <ion-input [(ngModel)]="signup.phone" name="phone" type="number" #phone="ngModel" spellcheck="false" autocapitalize="off" required>
                 </ion-input>
-                <button ion-button item-right clear type="reset" class="fs-clear-btn">
+                <button ion-button item-right type="reset" class="fs-clear-btn">
                   <ion-icon name="close"></ion-icon>
                   <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
                 </button>
@@ -132,7 +132,7 @@
                 <ion-label floating>Mật khẩu</ion-label>
                 <ion-input [(ngModel)]="signup.password" name="password" type="{{type}}" #password="ngModel" required>
                 </ion-input>
-                <button ion-button item-right clear class="fs-eye" (click)="showPassword()">
+                <button ion-button item-right class="fs-eye" (click)="showPassword()">
                   <ion-icon name="{{iconPass}}" md="md-{{iconPass}}" showWhen="android, windows"></ion-icon>
                   <ion-icon ios="ios-{{iconPass}}" md="md-{{iconPass}}"></ion-icon>
                 </button>
@@ -147,7 +147,7 @@
                 <ion-label floating>Nhập lại mật khẩu</ion-label>
                 <ion-input [(ngModel)]="signup.repassword" name="repassword" type="{{type}}" #repassword="ngModel" required>
                 </ion-input>
-                <button ion-button item-right clear class="fs-eye" (click)="showPassword()">
+                <button ion-button item-right class="fs-eye" (click)="showPassword()">
                   <ion-icon name="{{iconPass}}" md="md-{{iconPass}}" showWhen="android, windows"></ion-icon>
                   <ion-icon ios="ios-{{iconPass}}" md="md-{{iconPass}}"></ion-icon>
                 </button>
@@ -159,7 +159,7 @@
                 <ion-label floating text-uppercase>mã giới thiệu</ion-label>
                 <ion-input [(ngModel)]="login.code" name="code" type="text" #code="ngModel" spellcheck="false" autocapitalize="off" required>
                 </ion-input>
-                <button ion-button item-right clear type="reset" class="fs-clear-btn">
+                <button ion-button item-right type="reset" class="fs-clear-btn">
                   <ion-icon name="close"></ion-icon>
                   <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
                 </button>
@@ -192,13 +192,13 @@
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col col-10 offset-1 text-center>
+            <ion-col col-8 offset-2 text-center>
               <button ion-button block text-uppercase icon-left class="btn-social-gg">
                 <ion-icon name="logo-google"></ion-icon> Tài khoản google</button>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col col-10 offset-1 text-center>
+            <ion-col col-8 offset-2 text-center>
               <button ion-button block text-uppercase icon-left class="btn-social-fb">
                 <ion-icon name="logo-facebook"></ion-icon> Tài khoản facebook</button>
             </ion-col>

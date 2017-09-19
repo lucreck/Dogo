@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { Platform, ViewController, NavParams } from 'ionic-angular';
@@ -9,14 +9,16 @@ import { UserData } from '../../providers/user-data';
 import { UserOptions } from '../../interfaces/user-options';
 import { ConferenceData } from '../../providers/conference-data';
 
+// import { TabsPage } from '../tabs-page/tabs-page';
+// import { SignupPage } from '../signup/signup';
 
 
 @Component({
-  templateUrl: 'account.html'
+  templateUrl: 'login.html'
 })
 
 
-export class AccountPage {
+export class LoginPage {
 
   constructor(
     public platform: Platform,
@@ -25,7 +27,6 @@ export class AccountPage {
     public confData: ConferenceData,
     public userData: UserData,
     public storage: Storage,
-    // public elementRef: ElementRef,
     
   ) {
  
@@ -36,41 +37,6 @@ tabAcc: string = this.params.get('charNum');
   dismiss() {
     this.viewCtrl.dismiss();
   }
-  // /**
-  //    * @private
-  //    */
-  // TextInput.prototype.clearTextInput = function () {
-  //       void 0;
-  //       this._value = '';
-  //       // this.onChange(this._value);
-  //       this.writeValue(this._value);
-  //   };
-//     InputBase.prototype.clearTextInput1 = function () {
-// void 0;
-// this._value = '';
-// };
- // @ViewChild('searchbar', {read: ElementRef}) searchbar: ElementRef;
-// reset input
-// itemAround = get.
-// inputAround = document.getElementsByTagName('ion-item');
-// inputAround1: any[] =[document.getElementsByTagName('ion-item')];
-// ngAfterViewInit() {}
-// resetInput() {
-// var inputAround = this.searchbar.nativeElement.querySelector('ion-item');
-// 	inputAround.forEach(function() {
-// 		this.find('ion-input').value('');
-// 	})
-// }
-
-// public valueInput: string;
-// reset() {
-// var valueInput = '';
-// 	let el = this.elementRef.nativeElement;
-//    var svg = document.getElementsByTagName('input');
-//    <HTMLInputElement>document.getElementsByClassName("searchbar-input") = <HTMLCollectionOf>get.valueInput;
-//   // name.elementRef.nativeElement.value;
-// 	 document.getElementsByTagName('input')= valueInput ;
-// }
   public type = 'password';
   public showPass = false;
   public iconPass = 'eye-off';

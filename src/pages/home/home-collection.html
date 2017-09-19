@@ -1,34 +1,34 @@
 <ion-grid name="home-collection" *ngFor="let i of [1,2,3,4]">
-    <!--Thanh tiêu đề và nút xem tất cả-->
-    <ion-row class="home-collection-header">
-      <ion-col col-8>
-        <p class="home-title" href="/" text-uppercase>Gia dụng</p>
-      </ion-col>
-      <ion-col col-4 text-right>
-        <button class="btn-vw">Xem tất cả</button>
-      </ion-col>
-    </ion-row>
-    <!--Slide danh sách sản phẩm-->
-    <ion-row name="collection products">
-      <ion-slides slidesPerView="2.5" spaceBetween="6">
-        <ion-slide *ngFor="let i of [1,2,3,4]">
-          <!--Sản phẩm -->
-          <div class="pi">
-            <div class="pi__inner">
-              <div class="pi__image">
-                <img src="assets/images/product/sp_{{i}}.jpg" />
-              </div>
-              <div class="pi__info">
-                <p class="pi__title">Sản phẩm có 2 dòng text {{i}}</p>
-                <p class="pi__price">
-                  100.000 VNĐ
-                  <del class="compare-price">130.000 VNĐ</del>
-                  <span class="sale-off">-25%</span>
-                </p>
-              </div>
+  <!--Thanh tiêu đề và nút xem tất cả-->
+  <ion-row class="home-collection-header">
+    <ion-col col-8>
+      <p class="home-title" href="/" text-uppercase>Gia dụng</p>
+    </ion-col>
+    <ion-col col-4 text-right>
+      <button class="btn-vw" (click)="itemTapped($event, item)">Xem tất cả</button>
+    </ion-col>
+  </ion-row>
+  <!--Slide danh sách sản phẩm-->
+  <ion-row name="collection products">
+    <ion-slides slidesPerView="2.5" spaceBetween="6">
+      <ion-slide *ngFor="let i of [1,2,3,4]">
+        <!--Sản phẩm -->
+        <div class="pi">
+          <div class="pi__inner">
+            <div class="pi__image" (click)="productTapped($event, product)">
+              <img src="assets/images/product/sp_{{i}}.jpg" />
+            </div>
+            <div class="pi__info">
+              <p class="pi__title" (click)="productTapped($event, product)">Sản phẩm có 2 dòng text {{i}}</p>
+              <p class="pi__price">
+                100.000 VNĐ
+                <del class="compare-price">130.000 VNĐ</del>
+                <span class="sale-off">-25%</span>
+              </p>
             </div>
           </div>
-        </ion-slide>
-      </ion-slides>
-    </ion-row>
-  </ion-grid>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+</ion-grid>

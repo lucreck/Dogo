@@ -1,18 +1,89 @@
-<!--
-  Generated template for the CollectionsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>collections</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<page-header></page-header>
+<ion-content>
+  <ion-grid no-padding>
+    <ion-navbar class="breadcrumb">
+      <ion-title text-uppercase>List</ion-title>
+    </ion-navbar>
+  </ion-grid>
+  <ion-grid no-padding>
+    <ion-slides>
+      <ion-slide *ngFor="let i of [1,2,3]">
+        <a href="javascript:void(0)" text-uppercase>
+          <img src="assets/images/slider/banner_slider_1.png">
+        </a>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+  <!--Slide danh sách sản phẩm-->
+  <ion-row name="collection products">
+    <ion-col col-6 *ngFor="let i of [1,2,3,4,1,2,3,4]">
+      <!--Sản phẩm -->
+      <div class="pi">
+        <div class="pi__inner">
+          <div class="pi__image" (click)="productTapped($event, product)">
+            <img src="assets/images/product/sp_{{i}}.jpg" />
+          </div>
+          <div class="pi__info">
+            <p class="pi__title" (click)="productTapped($event, product)">Sản phẩm có 2 dòng text {{i}}</p>
+            <p class="pi__price">
+              100.000 VNĐ
+              <del class="compare-price">130.000 VNĐ</del>
+              <span class="sale-off">-25%</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list> -->
+  <!-- <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div> -->
+  <!--end-->
+  <div class="dogo-footer">
+    <ion-grid class="payments">
+      <ion-row>
+        <ion-col>
+          <p class="payments-title">Các hình thức thanh toán</p>
+          <img src="assets/images/payments.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="policies">
+      <ion-row>
+        <ion-col *ngFor="let i of [1,2,3]">
+          <img src="assets/images/polici_{{i}}.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="sharing">
+      <ion-row>
+        <ion-col *ngFor="let i of ['title',1,2,3,4]">
+          <img height="32" src="assets/images/share-{{i}}.png">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="sub-footer">
+      <ion-row>
+        <ion-col>
+          <img height="40" src="assets/images/logo/dogo-logo.png">
+          <div class="company-info">
+            <h2>CÔNG TY TNHH DOGO VIETNAM - ĐIỀU HÀNH BỞI BT GROUP</h2>
+            <p>Giấy CNĐKDN: 0308808888</p>
+            <p>Ngày cấp: 06/10/2017</p>
+            <p>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư TP.Hà Nội
+              <p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
