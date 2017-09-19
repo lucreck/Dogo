@@ -8,16 +8,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // login
 // import { Auth, User, UserDetails, IDetailedError } from '@ionic/cloud-angular';
 
-import { HeaderPage } from '../pages/header/header';
+// import { HeaderPage } from '../pages/header/header';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+// import { ListPage } from '../pages/list/list';
 // import { UserData } from '../providers/user-data';
 // import { UserOptions } from '../interfaces/user-options';
 import { AccountPage } from '../pages/account/account';
 // import { ConferenceData } from '../providers/conference-data';
 
 // collection page
-// import { CollectionsPage } from '../pages/collections/collections';
+import { CollectionsPage } from '../pages/collections/collections';
 // // collection page
 // import { CollectionsPage } from '../pages/collections/collections';
 // import { Modal2Page, ModalContentPage } from '../pages/modal2/modal2';
@@ -31,7 +31,7 @@ export class MyApp {
  // @ViewChild('navCtrl') navCtrl: NavController;
 rootPage: any = HomePage;
 
-pages: Array<{title: string, component: any}>;
+pages: Array<{title: string, component: any, icon: string}>;
 
 constructor(
   public platform: Platform,
@@ -46,8 +46,9 @@ constructor(
 //     confData.load();
   // used for an example of ngFor and navigation
   this.pages = [
-    { title: 'Home', component: HomePage },
-    { title: 'List', component: ListPage },
+    { title: 'Trang chủ', component: HomePage, icon: 'add-circle' },
+    { title: 'Gia dụng', component: CollectionsPage, icon: 'add-circle' },
+    { title: 'Mẹ và bé', component: CollectionsPage, icon: 'add-circle' },
     // { title: 'Đăng ký', component: Modal2Page },
     // { title: 'Đăng nhập', component: ListPage },
   ];

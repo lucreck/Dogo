@@ -10,16 +10,22 @@
     <ion-navbar class="breadcrumb" padding-left>
       <!-- <ion-title text-uppercase>Tổng quan sản phẩm</ion-title> -->
       <ion-slides slidesPerView="1.5" spaceBetween="0" padding-left>
-        <ion-slide *ngFor="let i of ['Tổng quan sản phẩm', 'Chi tiết sản phẩm']">
-          <a href="javascript:void(0)" text-uppercase (click)="itemTapped($event, item)">
+        <ion-slide>
+          <a href="#overview" text-uppercase>
             <!-- <a href="javascript:void(0)" text-uppercase [navPush]="pushPage" [navParams]="params"> -->
-            {{i}}
+            Tổng quan sản phẩm
+          </a>
+        </ion-slide>
+        <ion-slide>
+          <a href="#detail" text-uppercase>
+            <!-- <a href="javascript:void(0)" text-uppercase [navPush]="pushPage" [navParams]="params"> -->
+            Chi tiết sản phẩm
           </a>
         </ion-slide>
       </ion-slides>
     </ion-navbar>
   </ion-grid>
-  <ion-grid padding-horizontal class="product-overview">
+  <ion-grid padding-horizontal class="product-overview" id="overview">
     <h5 class="product__title">Tấm phủ tủ lạnh chống thấm cho nhà thêm xinh</h5>
     <div class="product__price">
       33.000 VNĐ
@@ -33,6 +39,28 @@
         </ion-slide>
       </ion-slides>
     </div>
+  </ion-grid>
+  <!--Phiên bản sản phẩm-->
+  <ion-grid padding class="bg-white">
+    <ion-row class="btn-no-trans">
+      <p>Chọn loại hàng </p>
+      <div>
+        <button ion-button>Đen M</button>
+        <button ion-button clear>Đen L</button>
+        <button ion-button clear>Đen XL</button>
+        <button ion-button clear>Trắng M</button>
+        <button ion-button clear>Trắng L</button>
+        <button ion-button clear>Trắng XL</button>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5 class="qty-title">Số lượng</ion-col>
+      <ion-col col-7 class="mg-center">
+        <button ion-button clear class="qty-minus" (click)="doMinus()"><ion-icon ios="ios-remove" md="md-remove"></ion-icon></button>
+        <ion-input type="number" class="qty-num" value="1" min="1"></ion-input>
+        <button ion-button clear class="qty-plus" (click)="doPlus()"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
   <!-- san pham cung nha san xuat (sp lien quan) -->
   <ion-grid name="product-related">
@@ -52,11 +80,11 @@
           <!--Sản phẩm -->
           <div class="pi">
             <div class="pi__inner">
-              <div class="pi__image">
+              <div class="pi__image" (click)="productTapped($event, product)">
                 <img src="assets/images/product/sp_{{i}}.jpg" />
               </div>
               <div class="pi__info">
-                <p class="pi__title">Sản phẩm có 2 dòng text {{i}}</p>
+                <p class="pi__title" (click)="productTapped($event, product)">Sản phẩm có 2 dòng text {{i}}</p>
                 <p class="pi__price">
                   100.000 VNĐ
                   <del class="compare-price">130.000 VNĐ</del>
@@ -69,7 +97,7 @@
       </ion-slides>
     </ion-row>
   </ion-grid>
-  <ion-grid>
+  <ion-grid id="detail">
     <ion-row>
       <ion-col col-12 no-padding>
         <div class="detail-product">
@@ -122,11 +150,11 @@
           <!--Sản phẩm -->
           <div class="pi">
             <div class="pi__inner">
-              <div class="pi__image">
+              <div class="pi__image" (click)="productTapped($event, product)">
                 <img src="assets/images/product/sp_{{i}}.jpg" />
               </div>
               <div class="pi__info">
-                <p class="pi__title">Sản phẩm có 2 dòng text {{i}}</p>
+                <p class="pi__title" (click)="productTapped($event, product)">Sản phẩm có 2 dòng text {{i}}</p>
                 <p class="pi__price">
                   100.000 VNĐ
                   <del class="compare-price">130.000 VNĐ</del>

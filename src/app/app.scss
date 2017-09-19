@@ -201,7 +201,9 @@ a:active {
 .toolbar-ios {
   min-height: 61px;
 }
-
+.bg-white {
+  background: #fff;
+}
 .modal-wrapper {
   .header .toolbar-background {
     border-color: color($colors, dogo-primary);

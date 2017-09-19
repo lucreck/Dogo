@@ -44,10 +44,60 @@ page-product {
     }
   }
 }
+
 .product-overview {
-	background: #fff;
+  background: #fff;
 }
+
 .mg-center {
   margin: 0 auto;
   text-align: center;
+}
+
+.qty-plus {
+  display: inline-block;
+  color: #c0c0c0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  ion-icon {
+    font-size: 32px;
+  }
+}
+
+.qty-minus {
+  display: inline-block;
+  color: #dd4f29;
+  position: absolute;
+  top: 0;
+  ion-icon {
+    font-size: 32px;
+  }
+}
+
+.qty-num {
+  display: inline-block;
+  input {
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.qty-title {
+  margin: auto;
+}
+
+.btn-no-trans {
+  button {
+    background: #fe5722;
+    border: 1px solid #dc542a;
+    width: 75px;
+    height: 35px;
+    color: #fff;
+    &[clear] {
+      border: 1px solid #e0e0e0;
+      background: transparent;
+      color: #000;
+    }
+  }
 }
